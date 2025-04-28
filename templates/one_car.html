@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #bdb5b5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.big-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 1000px;
+    height: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left img {
+    margin-left: 90px;
+    max-width: 130%;
+    max-height: 900px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.right {
+    margin-left: 90px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 90px;
+}
+
+.car-details h2, .car-details h3 {
+    margin: 10px 0;
+}
+
+.book-button, .not-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.not-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #bf2020;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #45a049;
+}
+
+/* To push footer at bottom */
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+</style>
+
+<div class="big-card">
+    <div class="left">
+        <img src="{{ car.image }}" alt="Car Image">
+    </div> 
+
+    <div class="right">
+        <div class="car-details">
+            <h2>Company: {{ car.make }}</h2>
+            <h3>Model: {{ car.model }}</h3>
+            <h3>Price/day: ₹{{ car.price_per_day }}</h3>
+            <h3>Location: {{ car.location }}</h3>
+            {% if car.available == True %}
+            <h3 style="color: #45a049;">Available</h3>
+            {% endif %}
+            {% if car.available == True %}
+            <button class="book-button">Book Car</button>
+            {% else %}
+            <button class="not-button">Not Available</button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

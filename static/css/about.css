@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.about {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.about h1, .about h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
