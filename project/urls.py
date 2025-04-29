@@ -22,5 +22,7 @@ urlpatterns = [
     path('app1/',include('app1.urls')),
     path('home/',views.home),
     path('about/',views.about),
-    path('contact/',views.contact)
+    path('contact/',views.contact),
+    path('home_cars/',views.home_cars),
+    path('one_car/<int:id>/',views.one_car,name='power'),
 ]
